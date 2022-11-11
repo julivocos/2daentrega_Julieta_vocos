@@ -142,8 +142,8 @@ footer .div2_footer {
     grid-template-rows: 70px 60px 200px 50px 60px;
   }
   #container_index .container_tres { /*imagenes en pagina principal*/
-    width: 80%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
   }
   #container_serv { /*servicios*/
     grid-template-rows: 60px 1730px 60px;
@@ -502,7 +502,7 @@ footer .div2_footer {
   margin-bottom: 20px;
 }
 .div_consejos .card-body {
-  background-image: linear-gradient(0deg, rgba(170, 165, 165, 0.897), rgba(200, 233, 248, 0.486)), url(/images/bujia.jpg);
+  background-image: linear-gradient(0deg, rgba(170, 165, 165, 0.897), rgba(200, 233, 248, 0.486)), url(../images/bujia.jpg);
   background-repeat: repeat;
   background-size: cover;
   background-position: center;

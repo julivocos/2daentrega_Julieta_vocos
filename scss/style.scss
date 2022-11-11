@@ -191,8 +191,8 @@
             grid-template-rows: 70px 60px 200px 50px 60px;
 
             .container_tres{ /*imagenes en pagina principal*/ 
-                width: 80%;
-                height: 95%;
+                width: 100%;
+                height: 100%;
             }
 
         }  
@@ -668,7 +668,7 @@
                 rgba(170, 165, 165, 0.897), 
                 rgba(200, 233, 248, 0.486) 
              )
-             ,url(/images/bujia.jpg);
+             ,url(../images/bujia.jpg);
              background-repeat:repeat;
              background-size: cover;
              background-position: center ;
