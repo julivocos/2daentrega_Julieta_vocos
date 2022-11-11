@@ -4,50 +4,49 @@
 }
 
 header {
-  border: 5px solid rgb(33, 94, 117);
   display: grid;
   align-items: center;
   text-align: center;
-  background-image: linear-gradient(white, rgb(164, 233, 216));
+  background-color: black;
+  justify-items: center;
 }
 header .header_tres {
-  color: rgba(131, 28, 12, 0.911);
+  color: white;
   font-style: italic;
   grid-area: frase;
-  justify-self: start;
 }
 header .header_dos { /*letras A&S*/
-  color: rgba(131, 28, 12, 0.911);
+  color: white;
   font-style: italic;
   grid-area: letra;
+  background-color: red;
+  border-radius: 50px;
 }
 header .header_dos h3 {
   font-weight: bold;
 }
-header .header_uno { /*imagen*/
-  grid-area: img;
-}
-
-.ul_nav { /*MENU DE NAVEGACION*/
-  height: 110px;
+header .ul_nav { /*MENU DE NAVEGACION*/
   list-style: none;
-  background-color: rgba(90, 206, 186, 0.973);
-  border-radius: 30px;
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 0;
+  grid-area: menu;
   align-items: center;
-  padding-left: 0;
 }
-.ul_nav a {
+header .ul_nav a {
   text-decoration: none;
-  color: rgba(17, 64, 109, 0.973);
+  color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
 }
+header .ul_nav a:hover {
+  background-color: rgba(38, 170, 38, 0.986);
+  color: black;
+}
 
 #button_a { /*boton pedi tu turno*/
-  background-color: rgba(71, 163, 148, 0.973);
-  color: rgba(17, 64, 109, 0.973);
+  background-color: rgba(38, 170, 38, 0.986);
+  color: white;
   text-align: center;
   cursor: pointer;
   font-weight: 700;
@@ -57,11 +56,15 @@ header .header_uno { /*imagen*/
   align-self: center;
 }
 #button_a:hover {
-  color: white;
+  color: black;
 }
 
-body {
-  background-image: linear-gradient(white, rgb(164, 233, 216));
+main {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: linear-gradient(1deg, rgba(84, 86, 87, 0.486), rgba(84, 86, 87, 0.486)), url(/images/mecanica.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 footer {
@@ -81,7 +84,7 @@ footer .div2_footer {
 
 @media only screen and (max-width: 600px) { /*MOBILE*/
   .titulos {
-    color: black;
+    color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-weight: bold;
@@ -90,7 +93,7 @@ footer .div2_footer {
     font-style: italic;
   }
   .subtitulos {
-    color: black;
+    color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-weight: bold;
@@ -98,46 +101,52 @@ footer .div2_footer {
     font-size: 11px;
   }
   header {
-    grid-template-columns: 40% 60%;
-    grid-template-rows: 65% 25%;
-    grid-template-areas: "img frase" "letra frase";
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "letra frase" "menu menu";
     justify-items: center;
     align-items: center;
-    margin-bottom: 1px;
-    height: 110px;
+    height: 230px;
   }
-  header img {
-    height: 70%;
-    width: 70%;
+  header .header_dos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80px;
+    height: 80px;
   }
-  header h3 {
-    font-size: 18px;
+  header .header_dos h3 {
+    font-size: 25px;
   }
   header .animate__bounceInRight {
     font-size: 18px;
   }
-  .ul_nav {
+  header nav {
+    background-color: rgb(56, 55, 55);
+    width: 100%;
+    grid-area: menu;
+  }
+  header nav .ul_nav {
     flex-direction: column;
+    padding-left: 0px;
   }
-  .ul_nav a {
+  header nav .ul_nav a {
     font-size: 12px;
-  }
-  .ul_nav a:hover {
-    background-color: white;
   }
   #button_a {
     padding: 12px 15px;
     font-size: 15px;
   }
   #container_index { /*inicio*/
-    grid-template-rows: 30px 60px 200px 50px 60px;
+    grid-template-rows: 70px 60px 200px 50px 60px;
   }
   #container_index .container_tres { /*imagenes en pagina principal*/
     width: 80%;
     height: 95%;
   }
   #container_serv { /*servicios*/
-    grid-template-rows: 40px 1730px 60px;
+    grid-template-rows: 60px 1730px 60px;
     grid-template-columns: 98%;
   }
   #container_serv .container_dos_serv { /*contenedor general*/
@@ -160,12 +169,14 @@ footer .div2_footer {
   }
   #container_serv .container_dos_serv .hijo_servicios p {
     grid-area: titulo;
-    color: black;
+    color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-weight: bold;
     font-style: italic;
     font-size: 11px;
+    color: black;
+    margin-bottom: 0px;
   }
   #container_serv .container_dos_serv .hijo_servicios ul {
     grid-area: info;
@@ -185,22 +196,25 @@ footer .div2_footer {
     opacity: 1;
   }
   .div_consejos { /*consejos*/
-    height: 1400px;
+    height: 1300px;
     width: 100%;
   }
   .div_consejos .btn {
-    width: 120px;
-    font-size: 12px;
+    width: 110px;
+    font-size: 11px;
   }
   .div_consejos .titulosec {
     font-size: 14px;
   }
   .div_consejos .texto_consejos {
-    font-size: 13px;
+    font-size: 12px;
     color: black;
   }
+  .div_consejos .card {
+    padding: 5px 5px 5px 5px;
+  }
   .div_consejos .card-body {
-    font-size: 15px;
+    font-size: 13px;
   }
   .grid_ubicacion { /*ubicacion*/
     grid-template-rows: 80px 350px 150px 80px;
@@ -223,8 +237,8 @@ footer .div2_footer {
     width: 380px;
     margin-bottom: 10px;
   }
-  .div_contacto .section .btn-outline-primary {
-    font-size: 15px;
+  .div_contacto .section .btn {
+    font-size: 13px;
   }
   footer {
     height: 110px;
@@ -236,7 +250,7 @@ footer .div2_footer {
 }
 @media only screen and (min-width: 601px) { /*DESKTOP*/
   .titulos {
-    color: black;
+    color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-weight: bold;
@@ -244,7 +258,7 @@ footer .div2_footer {
     font-size: 25px;
   }
   .subtitulos {
-    color: black;
+    color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-weight: bold;
@@ -252,20 +266,18 @@ footer .div2_footer {
     font-size: 16px;
   }
   header {
-    height: 160px;
-    grid-template-columns: 25% 17% 58%;
-    grid-template-rows: 100%;
-    grid-template-areas: "img letra frase";
-    justify-content: space-evenly;
-    margin-bottom: 1px;
+    height: 180px;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 75% 25%;
+    grid-template-areas: "letra frase" "menu menu";
   }
-  header img {
-    height: 100%;
-    width: 100%;
-  }
-  header img:hover {
-    height: 110%;
-    width: 110%;
+  header .header_dos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100px;
+    height: 100px;
   }
   header h3 {
     font-size: 30px;
@@ -279,18 +291,22 @@ footer .div2_footer {
   header .animate__bounceInRight:hover {
     font-size: 24px;
   }
-  .ul_nav a {
-    font-size: 14px;
+  header nav {
+    grid-area: menu;
+    width: 100%;
   }
-  .ul_nav a:hover {
-    font-size: 108%;
+  header .ul_nav a {
+    font-size: 13px;
+  }
+  header .ul_nav a:hover {
+    font-size: 15px;
   }
   #button_a {
     padding: 15px 32px;
     font-size: 18px;
   }
   #button_a:hover {
-    color: white;
+    color: black;
   }
   #container_index { /*inicio*/
     grid-template-rows: 80px 140px 400px 90px 90px;
@@ -310,11 +326,11 @@ footer .div2_footer {
     width: 4%;
   }
   #container_serv { /*servicios*/
-    grid-template-rows: 90px 1450px 90px;
-    grid-template-columns: 100%;
+    grid-template-rows: 90px 1300px 90px;
   }
   #container_serv .container_dos_serv {
-    height: 1400px;
+    margin-top: 20px;
+    height: 1300px;
   }
   #container_serv .container_dos_serv .padre_servicios {
     color: black;
@@ -323,12 +339,10 @@ footer .div2_footer {
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    margin-bottom: 25px;
-    background-color: rgb(184, 182, 182);
-    height: 60%;
+    height: 100%;
   }
   #container_serv .container_dos_serv .padre_servicios img {
-    height: 35%;
+    height: 32%;
     width: 88%;
     border-radius: 20px;
   }
@@ -345,24 +359,28 @@ footer .div2_footer {
     font-size: 14px;
   }
   #container_serv .container_dos_serv .padre_servicios .hijo_servicios li:hover {
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(5, 36, 77);
   }
+  #container_serv .container_dos_serv .padre_servicios .hijo_servicios p {
+    margin-bottom: 0px;
+  }
   .div_consejos { /*consejos*/
-    height: 1650px;
+    height: 1900px;
   }
   .div_consejos .texto_consejos {
-    font-size: 15px;
+    font-size: 14px;
     color: black;
   }
   .div_consejos .card {
     width: 75vw;
+    padding: 16px 16px 16px 16px;
   }
   .div_consejos .card-body {
     font-size: 16px;
   }
   .div_consejos .titulosec {
-    font-size: 18px;
+    font-size: 19px;
   }
   .div_consejos .btn {
     width: 110px;
@@ -439,7 +457,7 @@ footer .div2_footer {
 
 #container_serv { /*PAGINA SERVICIOS */
   display: grid;
-  grid-template-columns: 96%;
+  grid-template-columns: 100%;
   grid-template-areas: "Area1" "Area2" "Area3";
   justify-content: center;
   align-content: center;
@@ -448,7 +466,7 @@ footer .div2_footer {
 }
 #container_serv .container_uno_serv {
   grid-area: Area1;
-  align-self: center;
+  align-self: flex-end;
 }
 #container_serv .container_tres_serv {
   grid-area: Area3;
@@ -462,13 +480,14 @@ footer .div2_footer {
 }
 #container_serv .container_dos_serv .hijo_servicios { /*contenedor hijo*/
   font-style: italic;
+  border-radius: 10px;
   background-image: linear-gradient(rgb(114, 157, 158), rgb(116, 214, 177));
 }
 #container_serv .container_dos_serv .hijo_servicios p {
   text-align: center;
 }
 #container_serv .container_dos_serv .hijo_servicios ul {
-  color: rgba(17, 64, 109, 0.973);
+  color: rgb(4, 46, 100);
 }
 
 .div_consejos { /*PAGINA CONSEJOS*/
@@ -479,29 +498,29 @@ footer .div2_footer {
   font-weight: bold;
 }
 .div_consejos .card {
-  padding: 16px 16px 16px 16px;
+  background-color: rgba(250, 245, 245, 0.959);
+  margin-bottom: 20px;
 }
 .div_consejos .card-body {
   background-image: linear-gradient(0deg, rgba(170, 165, 165, 0.897), rgba(200, 233, 248, 0.486)), url(/images/bujia.jpg);
   background-repeat: repeat;
   background-size: cover;
   background-position: center;
-  color: rgb(14, 15, 15);
+  color: rgb(4, 46, 100);
   padding: 20px 20px 20px 20px;
 }
 .div_consejos .titulosec {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: rgba(17, 64, 109, 0.973);
+  color: black;
   font-style: italic;
-}
-.div_consejos .btn-primary {
-  background-color: rgba(71, 163, 148, 0.973);
-  border-color: rgba(71, 163, 148, 0.973);
+  font-weight: bold;
 }
 .div_consejos .hijo_dos {
-  width: 90%;
+  width: 88%;
   height: 15%;
   text-align: center;
+  background-color: black;
+  border-radius: 10px;
+  color: white;
 }
 .div_consejos .hijo_dos iframe {
   width: 100%;
@@ -532,7 +551,7 @@ footer .div2_footer {
   display: flex;
   font-weight: bold;
   font-style: italic;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
 }
 .grid_ubicacion .mapa_ubicacion {
   grid-area: mapa;
@@ -557,4 +576,7 @@ footer .div2_footer {
 }
 .div_contacto .section .input_formato { /*formato input en formulario de contacto*/
   border-radius: 15px;
+}
+.div_contacto .section label {
+  color: white;
 }/*# sourceMappingURL=style.css.map */

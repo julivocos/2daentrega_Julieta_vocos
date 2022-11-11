@@ -1,5 +1,7 @@
+@import "variables";
+
 @mixin estilos_titulos ($tamanio_letra) {
-    color: black;
+    color:$color_textos;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-weight: bold;

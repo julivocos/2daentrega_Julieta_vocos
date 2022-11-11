@@ -3,6 +3,7 @@
 
 
 
+
 *{
     margin:0;
     padding: 0;
@@ -10,61 +11,64 @@
        
     
     header{
-        border:5px solid rgb(33, 94, 117) ;
-        display:grid;
+        display: grid;
         align-items: center;
         text-align: center;
-        background-image: $color_gradiente;
+        background-color: black;
+        justify-items: center;
 
         .header_tres{
-            color:$color_rojo;
+            color:$color_textos;
             font-style: italic;
             grid-area: frase;
-            justify-self: start;         
+                    
         }
         
         .header_dos{ /*letras A&S*/
-            color:$color_rojo;
+            color:$color_textos;
             font-style: italic; 
             grid-area: letra;   
+            background-color: red;
+            border-radius: 50px;
             h3{
                 font-weight: bold;
             }
         }
         
-        .header_uno{/*imagen*/
-             grid-area: img;
-        }
    
+
+        .ul_nav{/*MENU DE NAVEGACION*/
+            list-style: none;           
+            display: flex;  
+            justify-content: space-evenly; 
+            margin-bottom: 0;
+            grid-area: menu;
+            align-items: center;
+            
+           
+            a{
+                text-decoration: none;
+                color: $color_textos;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-weight: bold; 
+                &:hover{
+                    background-color: $color_boton;
+                    color: black;
+                   }
+             
+            }
+        
+        
+        
+        }
+
     }   
 
-    .ul_nav{/*MENU DE NAVEGACION*/
-        height: 110px;  
-        list-style: none;
-        background-color:$color_verde; 
-        border-radius: 30px;
-        display: flex;  
-        justify-content: space-evenly; 
-        align-items: center;
-        padding-left: 0;
-       
-       
-        a{
-            text-decoration: none;
-            color: $color_azul;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: bold; 
-            
-         
-        }
-    
-    
-    
-    }
+ 
     
     #button_a{/*boton pedi tu turno*/
         background-color:$color_boton;
-        color: $color_azul;
+        color:  $color_textos;
         text-align: center;
         cursor: pointer;
         font-weight: 700;
@@ -74,25 +78,38 @@
         align-self: center;
 
         &:hover{
-           color: white;
+           color:black;
        }
        
     }
 
-   body{
-    background-image: $color_gradiente; 
+   main{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-image: linear-gradient(
+            1deg,
+            rgba(84, 86, 87, 0.486), 
+            rgba(84, 86, 87, 0.486) 
+            )
+            ,url(/images/mecanica.jpg);
+
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: center;    
+
     }
+
+
 
     footer{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;    
+    color:$color_textos;    
     font-style: italic;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content:center ;
     text-align: center;
-    background-color: black;
+    background-color: $color_background;
 
     .div2_footer{
         margin-bottom: 15px;
@@ -114,43 +131,56 @@
         }
     
         header{
-            grid-template-columns: 40% 60% ;
-            grid-template-rows: 65% 25% ;
-            grid-template-areas:"img frase"
-                                "letra frase";                
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 50% 50%;
+            grid-template-areas: "letra frase"
+                                "menu menu";               
             justify-items: center;
             align-items: center;
-            margin-bottom: 1px;
-            height: 110px;
+            height: 230px;
              
-            img{
-                height: 70%;
-                width: 70%;
-            }
+            .header_dos{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 80px;
+                height: 80px;
+                
+                h3{
+                    font-size: 25px;   
+                }
+            }      
 
-            h3{
-                font-size: 18px;   
-            }
-    
             .animate__bounceInRight{
                 font-size: 18px;
                 
             }
-    
-        }  
-      
-        .ul_nav{
-            flex-direction: column;
-    
-            a{
-                font-size: 12px;   
-               &:hover{
-                background-color: white;
-               }
+
+            nav{
+                background-color: rgb(56, 55, 55);
+                width: 100%;
+                grid-area: menu;
+                
+                .ul_nav{
+                    flex-direction: column;
+                    padding-left: 0px;
+            
+                    a{
+                        font-size: 12px;   
+                      
+                    }
+                }
+        
             }
-    
-        }
-       
+        
+
+
+
+
+
+        }  
+           
         #button_a{
             padding: 12px 15px;
             font-size: 15px;
@@ -158,7 +188,7 @@
         }
 
         #container_index{ /*inicio*/
-            grid-template-rows: 30px 60px 200px 50px 60px;
+            grid-template-rows: 70px 60px 200px 50px 60px;
 
             .container_tres{ /*imagenes en pagina principal*/ 
                 width: 80%;
@@ -167,8 +197,9 @@
 
         }  
     
+        
         #container_serv{ /*servicios*/
-            grid-template-rows: 40px 1730px 60px; 
+            grid-template-rows: 60px 1730px 60px; 
             grid-template-columns: 98%;
 
             .container_dos_serv{/*contenedor general*/
@@ -192,7 +223,9 @@
             
                     p{
                          grid-area: titulo;
-                         @include estilos_titulos("subtitulosm")
+                         @include estilos_titulos("subtitulosm");
+                         color:black;
+                         margin-bottom: 0px;
                  
                     }
         
@@ -222,12 +255,12 @@
         }
      
         .div_consejos{/*consejos*/
-            height: 1400px;
+            height: 1300px;
             width: 100%;
         
             .btn{
-                width: 120px;
-               font-size: 12px;
+                width: 110px;
+               font-size: 11px;
            }
        
            .titulosec{
@@ -236,12 +269,16 @@
             }
    
            .texto_consejos{
-                font-size: 13px;
+                font-size: 12px;
                 color:black;
            }
            
+           .card{
+             padding: 5px 5px 5px 5px;
+                   
+            }
            .card-body{
-               font-size: 15px;
+               font-size: 13px;
            }    
 
 
@@ -272,8 +309,9 @@
                     margin-bottom: 10px;
                 }
 
-                .btn-outline-primary{
-                    font-size: 15px;
+                .btn{
+                    font-size: 13px;
+                
                
                 }
 
@@ -307,23 +345,26 @@
         }
     
         header{ 
-            height: 160px;
-            grid-template-columns: 25% 17% 58%;
-            grid-template-rows: 100%;
-            grid-template-areas:"img letra frase";                
-            justify-content: space-evenly;
-            margin-bottom: 1px;
+            height: 180px;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 75% 25%;
+            grid-template-areas: "letra frase"
+                                "menu menu";  
 
-            img{
-                height: 100%;
-                width: 100%;
-                &:hover{
-                    height: 110%;
-                    width: 110%;
-                    }
-            }
-
+           
+        
+            .header_dos{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100px;
+                height: 100px;
+                
+            }                       
+          
             h3{
+               
                 font-size: 30px;
                 &:hover{
                     font-size: 33px;
@@ -337,16 +378,24 @@
                 }
             }
 
-        }
-    
-        .ul_nav a{
-            font-size: 14px;
-    
-            &:hover{
-                font-size: 108%;
-             
+
+            nav{
+                grid-area: menu;
+                width: 100%;
+                
             }
+            .ul_nav a{
+                font-size: 13px;
+        
+                &:hover{
+                    font-size: 15px;
+                 
+                }
+            }
+
         }
+    
+      
       
        #button_a{
            padding: 15px 32px;
@@ -354,7 +403,7 @@
     
            &:hover{
          
-            color: white;
+            color: black;
             }
        }
     
@@ -382,25 +431,22 @@
         }
     
         #container_serv{ /*servicios*/
-            grid-template-rows: 90px 1450px 90px; 
-            grid-template-columns: 100%;
+            grid-template-rows: 90px 1300px 90px; 
 
             .container_dos_serv{
-                height: 1400px;
+                margin-top: 20px;
+                height: 1300px;
 
                 .padre_servicios{
-      
                     color: black;
                     font-weight:bold;
                     display: flex; 
                     justify-content: space-evenly;
                     align-items: center;
                     width: 100%;
-                    margin-bottom: 25px;
-                    background-color: rgb(184, 182, 182);
-                    height:60%;
+                    height:100%;
                     img{
-                        height: 35%;
+                        height: 32%;
                         width: 88%;
                         border-radius: 20px;
                     }
@@ -417,8 +463,11 @@
                             font-size: 14px;
                         }
                         li:hover{
-                            font-size: 18px;
+                            font-size: 16px;
                             color:rgb(5, 36, 77);
+                        }
+                        p{
+                            margin-bottom: 0px;
                         }
                     
                     }
@@ -429,15 +478,16 @@
         }
     
         .div_consejos{/*consejos*/
-            height: 1650px;
+            height: 1900px;
     
              .texto_consejos{
-                 font-size: 15px;
+                 font-size: 14px;
                 color:black;
             }
 
             .card{
                 width: calc(75vw);
+                padding: 16px 16px 16px 16px;
             }
     
             .card-body{
@@ -445,7 +495,7 @@
             }    
 
             .titulosec{
-                font-size: 18px;
+                font-size: 19px;
             }
 
             .btn{
@@ -553,7 +603,7 @@
     
     #container_serv{/*PAGINA SERVICIOS */
         display: grid;
-        grid-template-columns: 96%;
+        grid-template-columns: 100%;
         grid-template-areas:"Area1"
                             "Area2"
                             "Area3"; 
@@ -564,7 +614,7 @@
 
         .container_uno_serv{
             grid-area:Area1 ;
-            align-self: center;
+            align-self: flex-end;
         
         }
         
@@ -582,6 +632,7 @@
 
             .hijo_servicios{/*contenedor hijo*/
                 font-style: italic;
+                border-radius: 10px;
                 background-image: linear-gradient(rgb(114, 157, 158), rgb(116, 214, 177) );
                 p{
                     text-align: center;
@@ -606,7 +657,8 @@
         font-weight:bold;
         
         .card{
-            padding: 16px 16px 16px 16px;
+            background-color: rgba(250, 245, 245, 0.959);
+            margin-bottom: 20px;
        
           }
 
@@ -620,27 +672,26 @@
              background-repeat:repeat;
              background-size: cover;
              background-position: center ;
-            color:rgb(14, 15, 15);
+            color:$color_azul;
             padding: 20px 20px 20px 20px;
            
         }
 
         .titulosec{
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color:$color_azul;
+            color:black;
             font-style: italic;
-            
+            font-weight: bold;
         }
 
-        .btn-primary{
-            background-color: $color_boton; 
-            border-color: $color_boton;
-         }
+        
 
         .hijo_dos{
-            width: 90%;
+            width: 88%;
             height: 15%;
             text-align: center;  
+            background-color:black;
+            border-radius: 10px;
+            color: $color_textos;
         }
 
         .hijo_dos iframe{
@@ -679,8 +730,7 @@
                 display: flex;
                 font-weight: bold;
                 font-style: italic;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                
+                color: $color_textos;
             }
             
         }
@@ -689,6 +739,7 @@
             grid-area: mapa;
             width: 100%;
             height: 100%;
+           
             
         
         }
@@ -715,6 +766,10 @@
             .input_formato{/*formato input en formulario de contacto*/
                 border-radius: 15px;
                
+            }
+
+            label{
+                color: $color_textos;
             }
                
         }
