@@ -158,7 +158,7 @@
             }
 
             nav{
-                background-color: rgb(56, 55, 55);
+                background-color: rgb(27, 26, 26);
                 width: 100%;
                 grid-area: menu;
                 
@@ -187,23 +187,13 @@
            
         }
 
-        #container_index{ /*inicio*/
-            grid-template-rows: 70px 60px 200px 50px 60px;
-
-            .container_tres{ /*imagenes en pagina principal*/ 
-                width: 100%;
-                height: 100%;
-            }
-
-        }  
+    
     
         
         #container_serv{ /*servicios*/
-            grid-template-rows: 60px 1730px 60px; 
-            grid-template-columns: 98%;
+           
 
             .container_dos_serv{/*contenedor general*/
-                grid-area: Area2 ;
                 align-items: center;
                 flex-direction:column ;
                 justify-content: space-evenly;
@@ -255,9 +245,24 @@
         }
      
         .div_consejos{/*consejos*/
-            height: 1300px;
-            width: 100%;
-        
+
+            h1{
+                margin-top: 5%;
+            }
+            .hijo_dos{
+                margin-bottom: 5%;
+            }
+            .hijo_tres_cons{
+                margin-top: 5%;
+                margin-bottom: 5%;
+            }
+            .hijo_uno{
+                ol{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            
             .btn{
                 width: 110px;
                font-size: 11px;
@@ -269,7 +274,7 @@
             }
    
            .texto_consejos{
-                font-size: 12px;
+                font-size: 11px;
                 color:black;
            }
            
@@ -407,14 +412,7 @@
             }
        }
     
-       #container_index{ /*inicio*/
-            grid-template-rows: 80px 140px 400px 90px 90px; 
-
-            .container_tres{ /*imagenes en pagina principal*/ 
-                width: 85%;
-                height: 90%;
-            }
-        }
+     
     
         footer{
             height: 130px;
@@ -431,11 +429,11 @@
         }
     
         #container_serv{ /*servicios*/
-            grid-template-rows: 90px 1300px 90px; 
+            
 
             .container_dos_serv{
-                margin-top: 20px;
-                height: 1300px;
+                
+                height: calc(150vw);
 
                 .padre_servicios{
                     color: black;
@@ -444,20 +442,22 @@
                     justify-content: space-evenly;
                     align-items: center;
                     width: 100%;
-                    height:100%;
-                    img{
-                        height: 32%;
-                        width: 88%;
-                        border-radius: 20px;
-                    }
+                    height: 100%;
+                    margin-bottom: 5%;
 
                     .hijo_servicios{
+                        height: 100%;
                         display: flex;
                         justify-content: space-evenly;
                         align-items: center;
                         font-size: 18px;
-                        width: 32%;  
-                        height: 88%;
+                        width: 32%; 
+                        img{
+                            height: 32%;
+                            width: 88%;
+                            border-radius: 20px;
+                        } 
+                       
                         flex-direction: column;
                         ul{
                             font-size: 14px;
@@ -539,32 +539,29 @@
    
 
     #container_index{   /*PAGINA INICIO*/ 
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-areas:"A1"
-                            "A2"
-                            "A3" 
-                            "A4"
-                            "A5"    ; 
+        display: flex;
+        flex-direction: column  ; 
         justify-content: center;
         align-content:center;
         justify-items: center;
         align-items: center;
+        text-align: center;
 
         .container_uno{
-            grid-area:A1 ;
-            align-self: center;
-        
+            margin-top: 5%;
+
         }
-        
         .container_dos{
-            grid-area: A2;
-            align-self: center; 
-            text-align: center;  
+            margin-top: 5%;
+            margin-bottom: 5%;
+
         }
-        .container_tres{ /*imagenes en pagina principal*/ 
-            grid-area: A3;
-            align-self: center;
+
+            
+        .container_tres{ /*imagenes en pagina principal*/
+            width: 60%;
+            height: 60%;
+           
 
             .img_container{
                 width: 100%;
@@ -573,61 +570,55 @@
                 .carousel-item{
                     width: 100%;
                     height: 100%;
-                    justify-self: center;
-                    align-self: center;
-                    text-align: center;
+                   
                     img{
                         width: 100%;
-                        height: 100%;
+                     height: 100%; 
                     
                     
                     }
                 }
                 
             }
-
+                 
 
         }
         .container_cuatro{
-            grid-area: A4;
-            align-self: center;
-            justify-self:center;
-            text-align: center;
+            margin-top: 5%;
+            margin-bottom: 5%;
         }
         .contacto{
-            grid-area: A5;
+            margin-bottom: 5%;
            
          }
  
     }
     
     #container_serv{/*PAGINA SERVICIOS */
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-areas:"Area1"
-                            "Area2"
-                            "Area3"; 
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-content:center;
         justify-items: center;
         align-items: center;
+       
 
         .container_uno_serv{
-            grid-area:Area1 ;
-            align-self: flex-end;
-        
+            text-align: center;
+            margin-bottom: 5%;
+            margin-top: 5%;
         }
         
         .container_tres_serv{
-            grid-area: Area3;
+            margin-top: 5%;
+            margin-bottom: 5%;
         }
-        
+
       
         .container_dos_serv{/*contenedor general*/
-            grid-area: Area2 ;
+           display: flex;
+           flex-direction: column;
             align-items: center;
-            display: flex;    
-            flex-direction: column;
             justify-content: space-evenly;
 
             .hijo_servicios{/*contenedor hijo*/
@@ -762,6 +753,8 @@
             font-weight: 500;
             display: flex;
             justify-content: center;
+
+            
 
             .input_formato{/*formato input en formulario de contacto*/
                 border-radius: 15px;

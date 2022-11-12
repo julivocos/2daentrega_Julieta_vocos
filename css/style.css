@@ -123,7 +123,7 @@ footer .div2_footer {
     font-size: 18px;
   }
   header nav {
-    background-color: rgb(56, 55, 55);
+    background-color: rgb(27, 26, 26);
     width: 100%;
     grid-area: menu;
   }
@@ -138,19 +138,8 @@ footer .div2_footer {
     padding: 12px 15px;
     font-size: 15px;
   }
-  #container_index { /*inicio*/
-    grid-template-rows: 70px 60px 200px 50px 60px;
-  }
-  #container_index .container_tres { /*imagenes en pagina principal*/
-    width: 100%;
-    height: 100%;
-  }
-  #container_serv { /*servicios*/
-    grid-template-rows: 60px 1730px 60px;
-    grid-template-columns: 98%;
-  }
+  #container_serv { /*servicios*/ }
   #container_serv .container_dos_serv { /*contenedor general*/
-    grid-area: Area2;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
@@ -195,9 +184,20 @@ footer .div2_footer {
   #container_serv .container_dos_serv .hijo_servicios img:hover {
     opacity: 1;
   }
-  .div_consejos { /*consejos*/
-    height: 1300px;
-    width: 100%;
+  .div_consejos { /*consejos*/ }
+  .div_consejos h1 {
+    margin-top: 5%;
+  }
+  .div_consejos .hijo_dos {
+    margin-bottom: 5%;
+  }
+  .div_consejos .hijo_tres_cons {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .div_consejos .hijo_uno ol {
+    display: flex;
+    flex-direction: column;
   }
   .div_consejos .btn {
     width: 110px;
@@ -207,7 +207,7 @@ footer .div2_footer {
     font-size: 14px;
   }
   .div_consejos .texto_consejos {
-    font-size: 12px;
+    font-size: 11px;
     color: black;
   }
   .div_consejos .card {
@@ -308,13 +308,6 @@ footer .div2_footer {
   #button_a:hover {
     color: black;
   }
-  #container_index { /*inicio*/
-    grid-template-rows: 80px 140px 400px 90px 90px;
-  }
-  #container_index .container_tres { /*imagenes en pagina principal*/
-    width: 85%;
-    height: 90%;
-  }
   footer {
     height: 130px;
     font-size: 15px;
@@ -325,12 +318,9 @@ footer .div2_footer {
   footer img:hover {
     width: 4%;
   }
-  #container_serv { /*servicios*/
-    grid-template-rows: 90px 1300px 90px;
-  }
+  #container_serv { /*servicios*/ }
   #container_serv .container_dos_serv {
-    margin-top: 20px;
-    height: 1300px;
+    height: 150vw;
   }
   #container_serv .container_dos_serv .padre_servicios {
     color: black;
@@ -340,20 +330,21 @@ footer .div2_footer {
     align-items: center;
     width: 100%;
     height: 100%;
-  }
-  #container_serv .container_dos_serv .padre_servicios img {
-    height: 32%;
-    width: 88%;
-    border-radius: 20px;
+    margin-bottom: 5%;
   }
   #container_serv .container_dos_serv .padre_servicios .hijo_servicios {
+    height: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-size: 18px;
     width: 32%;
-    height: 88%;
     flex-direction: column;
+  }
+  #container_serv .container_dos_serv .padre_servicios .hijo_servicios img {
+    height: 32%;
+    width: 88%;
+    border-radius: 20px;
   }
   #container_serv .container_dos_serv .padre_servicios .hijo_servicios ul {
     font-size: 14px;
@@ -409,26 +400,24 @@ footer .div2_footer {
   }
 }
 #container_index { /*PAGINA INICIO*/
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-areas: "A1" "A2" "A3" "A4" "A5";
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   justify-items: center;
   align-items: center;
-}
-#container_index .container_uno {
-  grid-area: A1;
-  align-self: center;
-}
-#container_index .container_dos {
-  grid-area: A2;
-  align-self: center;
   text-align: center;
 }
+#container_index .container_uno {
+  margin-top: 5%;
+}
+#container_index .container_dos {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 #container_index .container_tres { /*imagenes en pagina principal*/
-  grid-area: A3;
-  align-self: center;
+  width: 60%;
+  height: 60%;
 }
 #container_index .container_tres .img_container {
   width: 100%;
@@ -437,45 +426,40 @@ footer .div2_footer {
 #container_index .container_tres .img_container .carousel-item {
   width: 100%;
   height: 100%;
-  justify-self: center;
-  align-self: center;
-  text-align: center;
 }
 #container_index .container_tres .img_container .carousel-item img {
   width: 100%;
   height: 100%;
 }
 #container_index .container_cuatro {
-  grid-area: A4;
-  align-self: center;
-  justify-self: center;
-  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 #container_index .contacto {
-  grid-area: A5;
+  margin-bottom: 5%;
 }
 
 #container_serv { /*PAGINA SERVICIOS */
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-areas: "Area1" "Area2" "Area3";
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   justify-items: center;
   align-items: center;
 }
 #container_serv .container_uno_serv {
-  grid-area: Area1;
-  align-self: flex-end;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 #container_serv .container_tres_serv {
-  grid-area: Area3;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 #container_serv .container_dos_serv { /*contenedor general*/
-  grid-area: Area2;
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
 }
 #container_serv .container_dos_serv .hijo_servicios { /*contenedor hijo*/
