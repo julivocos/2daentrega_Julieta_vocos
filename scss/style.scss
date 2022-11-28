@@ -3,14 +3,13 @@
 
 
 
-
 *{
-    margin:0;
-    padding: 0;
+ margin:0;
+ padding: 0;
 }
        
-    
-    header{
+
+header{
         display: grid;
         align-items: center;
         text-align: center;
@@ -25,13 +24,17 @@
         }
         
         .header_dos{ /*letras A&S*/
-            color:$color_textos;
+            color:BLACK;
             font-style: italic; 
             grid-area: letra;   
             background-color: red;
             border-radius: 50px;
             h3{
                 font-weight: bold;
+            }
+            a{
+                text-decoration: none;
+                color: black;
             }
         }
         
@@ -44,6 +47,7 @@
             margin-bottom: 0;
             grid-area: menu;
             align-items: center;
+            padding-left: 0px;
             
            
             a{
@@ -51,8 +55,9 @@
                 color: $color_textos;
                 font-family:Verdana, Geneva, Tahoma, sans-serif;
                 font-weight: bold; 
+                
                 &:hover{
-                    background-color: $color_boton;
+                    background-color: white;
                     color: black;
                    }
              
@@ -62,11 +67,9 @@
         
         }
 
-    }   
+}   
 
- 
-    
-    #button_a{/*boton pedi tu turno*/
+#button_a{/*boton pedi tu turno*/
         background-color:$color_boton;
         color:  $color_textos;
         text-align: center;
@@ -81,9 +84,9 @@
            color:black;
        }
        
-    }
+}
 
-   main{
+main{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         background-image: linear-gradient(
             1deg,
@@ -96,11 +99,10 @@
         background-size: cover; 
         background-position: center;    
 
-    }
+}
 
 
-
-    footer{
+footer{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color:$color_textos;    
     font-style: italic;
@@ -115,11 +117,10 @@
         margin-bottom: 15px;
     }
  
-    }
-
+}
 
     
-    @media only screen and (max-width:600px){/*MOBILE*/
+@media only screen and (max-width:600px){/*MOBILE*/
         .titulos{    
             @include estilos_titulos("titulosm")
             
@@ -131,7 +132,7 @@
         }
     
         header{
-            grid-template-columns: 30% 70%;
+            grid-template-columns: 18% 82%;
             grid-template-rows: 50% 50%;
             grid-template-areas: "letra frase"
                                 "menu menu";               
@@ -148,7 +149,7 @@
                 height: 80px;
                 
                 h3{
-                    font-size: 25px;   
+                    font-size: 30px;   
                 }
             }      
 
@@ -164,7 +165,7 @@
                 
                 .ul_nav{
                     flex-direction: column;
-                    padding-left: 0px;
+                    
             
                     a{
                         font-size: 12px;   
@@ -178,7 +179,6 @@
 
 
 
-
         }  
            
         #button_a{
@@ -186,9 +186,6 @@
             font-size: 15px;
            
         }
-
-    
-    
         
         #container_serv{ /*servicios*/
            
@@ -245,13 +242,30 @@
         }
      
         .div_consejos{/*consejos*/
-
-            h1{
-                margin-top: 5%;
-            }
+            
             .hijo_dos{
-                margin-bottom: 5%;
+               flex-direction: column;
+               align-items: center;
+               @include estilos_titulos("subtitulolg");
+                div{
+                width: 60%;
+                height: calc(60vw);
+                }   
+                         
+                a{
+                    font-size:15px ;  
+                } 
+                .hijo_dos_text{
+                    height: auto;
+                }
+                p{
+                    margin-bottom: 0;
+                    margin-top: 5%;
+                    
+                }
+                               
             }
+
             .hijo_tres_cons{
                 margin-top: 5%;
                 margin-bottom: 5%;
@@ -286,7 +300,6 @@
                font-size: 13px;
            }    
 
-
         }
 
         .grid_ubicacion{/*ubicacion*/
@@ -305,11 +318,12 @@
             
             .section{/*formulario de contacto*/
                 font-size: 15px;
-                margin-bottom: 15px;    
+                margin-bottom: 15px;  
+                
 
                 .input_formato{/*formato input en formulario de contacto*/
                     font-size: 15px;
-                     padding: 8px;
+                    padding: 8px;
                     width: 380px;
                     margin-bottom: 10px;
                 }
@@ -328,16 +342,16 @@
             height: 110px;
             font-size: 10px;
             img{ 
-                width:4%;
+                width:3%;
                 }
     
         }
     
-    }
+}
     
     
     
-    @media only screen and (min-width:601px){/*DESKTOP*/
+@media only screen and (min-width:601px){/*DESKTOP*/
        
         .titulos{    
             @include estilos_titulos("titulolg")
@@ -370,9 +384,9 @@
           
             h3{
                
-                font-size: 30px;
+                font-size: 35px;
                 &:hover{
-                    font-size: 33px;
+                    font-size: 38px;
                 }
             }
             
@@ -383,17 +397,16 @@
                 }
             }
 
-
             nav{
                 grid-area: menu;
                 width: 100%;
                 
             }
             .ul_nav a{
-                font-size: 13px;
+                font-size: 14px;
         
                 &:hover{
-                    font-size: 15px;
+                    font-size: 16px;
                  
                 }
             }
@@ -419,10 +432,10 @@
             font-size: 15px;
     
             img{ 
-            width:3%;
+            width:2.5%;
     
             &:hover{
-                width: 4%;
+                width: 2.8%;
             }
             }
     
@@ -460,11 +473,11 @@
                        
                         flex-direction: column;
                         ul{
-                            font-size: 14px;
+                            font-size: 12px;
                         }
                         li:hover{
-                            font-size: 16px;
-                            color:rgb(5, 36, 77);
+                         
+                            color:white;
                         }
                         p{
                             margin-bottom: 0px;
@@ -478,15 +491,30 @@
         }
     
         .div_consejos{/*consejos*/
-            height: 1900px;
-    
-             .texto_consejos{
+           
+           .hijo_uno{
+            display: flex;
+            width: calc(70vw);
+           }
+           
+
+            .hijo_dos{
+                margin-bottom: 5%;
+                @include estilos_titulos("titulosm");
+                  div{
+                    width: 48%;
+                  } 
+                   
+                  
+            }
+           
+        
+            .texto_consejos{
                  font-size: 14px;
                 color:black;
             }
 
             .card{
-                width: calc(75vw);
                 padding: 16px 16px 16px 16px;
             }
     
@@ -495,11 +523,15 @@
             }    
 
             .titulosec{
-                font-size: 19px;
+                font-size: 17px;
             }
 
             .btn{
                 width: 110px;
+            }
+
+            .hijo_tres_cons{
+                margin-bottom: 5%;
             }
 
         }
@@ -534,11 +566,11 @@
         }
         
     
-    }
+}
     
    
 
-    #container_index{   /*PAGINA INICIO*/ 
+#container_index{   /*PAGINA INICIO*/ 
         display: flex;
         flex-direction: column  ; 
         justify-content: center;
@@ -559,29 +591,26 @@
 
             
         .container_tres{ /*imagenes en pagina principal*/
-            width: 60%;
-            height: 60%;
+            width: 70%;
            
-
             .img_container{
                 width: 100%;
                 height: 100%;
 
                 .carousel-item{
                     width: 100%;
-                    height: 100%;
+                  
                    
                     img{
                         width: 100%;
-                     height: 100%; 
+                        height: calc(34vw) ;
                     
                     
                     }
                 }
                 
             }
-                 
-
+          
         }
         .container_cuatro{
             margin-top: 5%;
@@ -592,9 +621,9 @@
            
          }
  
-    }
+}
     
-    #container_serv{/*PAGINA SERVICIOS */
+#container_serv{/*PAGINA SERVICIOS */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -637,15 +666,20 @@
         }      
 
 
-
-    } 
+} 
     
-    .div_consejos{/*PAGINA CONSEJOS*/
+
+.div_consejos{/*PAGINA CONSEJOS*/
         display: flex;
-        align-items: center;
         flex-direction: column;
+        align-content: center;
         justify-content: space-evenly;
+        align-items: center;
         font-weight:bold;
+        h1{
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
         
         .card{
             background-color: rgba(250, 245, 245, 0.959);
@@ -672,28 +706,72 @@
             color:black;
             font-style: italic;
             font-weight: bold;
+            margin-bottom: 5px;
+            
         }
 
-        
-
+        ol{
+            list-style: none;
+        }
         .hijo_dos{
-            width: 88%;
-            height: 15%;
+            display: flex;
+            justify-content: space-evenly;
             text-align: center;  
-            background-color:black;
-            border-radius: 10px;
             color: $color_textos;
+
+            div{
+                display: flex;
+                flex-direction: column;
+                
+                justify-content: space-evenly;
+                align-content: center;
+                
+            }
+           
+            img{
+                width: 100%;
+                height: 100%;
+             
+            }
+
+            .hijo_dos_1{
+                position: relative;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img{
+                    opacity: 0.7;
+                    border: 12px solid white;
+                }
+            }
+            .hijo_dos_text{
+                position: absolute;
+                top: 50%;
+                width: 90%;
+                align-self: center;
+                       
+              a{
+                text-decoration: none;
+                color: $color_textos;
+                
+                
+                &:hover{
+                    color:blue;
+                }
+           
+              }
+            } 
+
+         
         }
 
-        .hijo_dos iframe{
-            width: 100%;
-            height: 80%;
-            border-radius: 10px;
-        }
+       
         
-    }
+}
    
-    .grid_ubicacion{ /*PAGINA UBICACION*/
+.grid_ubicacion{ /*PAGINA UBICACION*/
         display: grid;
         grid-template-columns: 100%;
         grid-template-areas:"titulo"  
@@ -741,9 +819,9 @@
         
         }
 
-    }
+}
     
-    .div_contacto{/*PAGINA CONTACTO*/ 
+.div_contacto{/*PAGINA CONTACTO*/ 
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -767,9 +845,8 @@
                
         }
         
-    }
-    
-    
+}
+ 
     
 
    

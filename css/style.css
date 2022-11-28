@@ -16,7 +16,7 @@ header .header_tres {
   grid-area: frase;
 }
 header .header_dos { /*letras A&S*/
-  color: white;
+  color: BLACK;
   font-style: italic;
   grid-area: letra;
   background-color: red;
@@ -25,6 +25,10 @@ header .header_dos { /*letras A&S*/
 header .header_dos h3 {
   font-weight: bold;
 }
+header .header_dos a {
+  text-decoration: none;
+  color: black;
+}
 header .ul_nav { /*MENU DE NAVEGACION*/
   list-style: none;
   display: flex;
@@ -32,6 +36,7 @@ header .ul_nav { /*MENU DE NAVEGACION*/
   margin-bottom: 0;
   grid-area: menu;
   align-items: center;
+  padding-left: 0px;
 }
 header .ul_nav a {
   text-decoration: none;
@@ -40,7 +45,7 @@ header .ul_nav a {
   font-weight: bold;
 }
 header .ul_nav a:hover {
-  background-color: rgba(38, 170, 38, 0.986);
+  background-color: white;
   color: black;
 }
 
@@ -98,10 +103,10 @@ footer .div2_footer {
     text-align: center;
     font-weight: bold;
     font-style: italic;
-    font-size: 11px;
+    font-size: 13px;
   }
   header {
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 18% 82%;
     grid-template-rows: 50% 50%;
     grid-template-areas: "letra frase" "menu menu";
     justify-items: center;
@@ -117,7 +122,7 @@ footer .div2_footer {
     height: 80px;
   }
   header .header_dos h3 {
-    font-size: 25px;
+    font-size: 30px;
   }
   header .animate__bounceInRight {
     font-size: 18px;
@@ -129,7 +134,6 @@ footer .div2_footer {
   }
   header nav .ul_nav {
     flex-direction: column;
-    padding-left: 0px;
   }
   header nav .ul_nav a {
     font-size: 12px;
@@ -163,7 +167,7 @@ footer .div2_footer {
     text-align: center;
     font-weight: bold;
     font-style: italic;
-    font-size: 11px;
+    font-size: 13px;
     color: black;
     margin-bottom: 0px;
   }
@@ -185,11 +189,29 @@ footer .div2_footer {
     opacity: 1;
   }
   .div_consejos { /*consejos*/ }
-  .div_consejos h1 {
-    margin-top: 5%;
-  }
   .div_consejos .hijo_dos {
-    margin-bottom: 5%;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+  }
+  .div_consejos .hijo_dos div {
+    width: 60%;
+    height: 60vw;
+  }
+  .div_consejos .hijo_dos a {
+    font-size: 15px;
+  }
+  .div_consejos .hijo_dos .hijo_dos_text {
+    height: auto;
+  }
+  .div_consejos .hijo_dos p {
+    margin-bottom: 0;
+    margin-top: 5%;
   }
   .div_consejos .hijo_tres_cons {
     margin-top: 5%;
@@ -245,7 +267,7 @@ footer .div2_footer {
     font-size: 10px;
   }
   footer img {
-    width: 4%;
+    width: 3%;
   }
 }
 @media only screen and (min-width: 601px) { /*DESKTOP*/
@@ -280,10 +302,10 @@ footer .div2_footer {
     height: 100px;
   }
   header h3 {
-    font-size: 30px;
+    font-size: 35px;
   }
   header h3:hover {
-    font-size: 33px;
+    font-size: 38px;
   }
   header .animate__bounceInRight {
     font-size: 22px;
@@ -296,10 +318,10 @@ footer .div2_footer {
     width: 100%;
   }
   header .ul_nav a {
-    font-size: 13px;
+    font-size: 14px;
   }
   header .ul_nav a:hover {
-    font-size: 15px;
+    font-size: 16px;
   }
   #button_a {
     padding: 15px 32px;
@@ -313,10 +335,10 @@ footer .div2_footer {
     font-size: 15px;
   }
   footer img {
-    width: 3%;
+    width: 2.5%;
   }
   footer img:hover {
-    width: 4%;
+    width: 2.8%;
   }
   #container_serv { /*servicios*/ }
   #container_serv .container_dos_serv {
@@ -347,34 +369,50 @@ footer .div2_footer {
     border-radius: 20px;
   }
   #container_serv .container_dos_serv .padre_servicios .hijo_servicios ul {
-    font-size: 14px;
+    font-size: 12px;
   }
   #container_serv .container_dos_serv .padre_servicios .hijo_servicios li:hover {
-    font-size: 16px;
-    color: rgb(5, 36, 77);
+    color: white;
   }
   #container_serv .container_dos_serv .padre_servicios .hijo_servicios p {
     margin-bottom: 0px;
   }
-  .div_consejos { /*consejos*/
-    height: 1900px;
+  .div_consejos { /*consejos*/ }
+  .div_consejos .hijo_uno {
+    display: flex;
+    width: 70vw;
+  }
+  .div_consejos .hijo_dos {
+    margin-bottom: 5%;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px;
+    font-style: italic;
+  }
+  .div_consejos .hijo_dos div {
+    width: 48%;
   }
   .div_consejos .texto_consejos {
     font-size: 14px;
     color: black;
   }
   .div_consejos .card {
-    width: 75vw;
     padding: 16px 16px 16px 16px;
   }
   .div_consejos .card-body {
     font-size: 16px;
   }
   .div_consejos .titulosec {
-    font-size: 19px;
+    font-size: 17px;
   }
   .div_consejos .btn {
     width: 110px;
+  }
+  .div_consejos .hijo_tres_cons {
+    margin-bottom: 5%;
   }
   .grid_ubicacion { /*ubicacion*/
     grid-template-rows: 100px 500px 250px 100px;
@@ -416,8 +454,7 @@ footer .div2_footer {
   margin-bottom: 5%;
 }
 #container_index .container_tres { /*imagenes en pagina principal*/
-  width: 60%;
-  height: 60%;
+  width: 70%;
 }
 #container_index .container_tres .img_container {
   width: 100%;
@@ -425,11 +462,10 @@ footer .div2_footer {
 }
 #container_index .container_tres .img_container .carousel-item {
   width: 100%;
-  height: 100%;
 }
 #container_index .container_tres .img_container .carousel-item img {
   width: 100%;
-  height: 100%;
+  height: 34vw;
 }
 #container_index .container_cuatro {
   margin-top: 5%;
@@ -476,10 +512,15 @@ footer .div2_footer {
 
 .div_consejos { /*PAGINA CONSEJOS*/
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-content: center;
   justify-content: space-evenly;
+  align-items: center;
   font-weight: bold;
+}
+.div_consejos h1 {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 .div_consejos .card {
   background-color: rgba(250, 245, 245, 0.959);
@@ -497,19 +538,50 @@ footer .div2_footer {
   color: black;
   font-style: italic;
   font-weight: bold;
+  margin-bottom: 5px;
+}
+.div_consejos ol {
+  list-style: none;
 }
 .div_consejos .hijo_dos {
-  width: 88%;
-  height: 15%;
+  display: flex;
+  justify-content: space-evenly;
   text-align: center;
-  background-color: black;
-  border-radius: 10px;
   color: white;
 }
-.div_consejos .hijo_dos iframe {
+.div_consejos .hijo_dos div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.div_consejos .hijo_dos img {
   width: 100%;
-  height: 80%;
-  border-radius: 10px;
+  height: 100%;
+}
+.div_consejos .hijo_dos .hijo_dos_1 {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.div_consejos .hijo_dos .hijo_dos_1 img {
+  opacity: 0.7;
+  border: 12px solid white;
+}
+.div_consejos .hijo_dos .hijo_dos_text {
+  position: absolute;
+  top: 50%;
+  width: 90%;
+  align-self: center;
+}
+.div_consejos .hijo_dos .hijo_dos_text a {
+  text-decoration: none;
+  color: white;
+}
+.div_consejos .hijo_dos .hijo_dos_text a:hover {
+  color: blue;
 }
 
 .grid_ubicacion { /*PAGINA UBICACION*/
